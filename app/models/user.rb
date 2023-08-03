@@ -6,6 +6,8 @@ class User < ApplicationRecord
   before_create :generate_authentication_token!
   has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy
+  validates :email, presence: true, uniqueness: true
+  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
 
   def generate_authentication_token!
     begin
