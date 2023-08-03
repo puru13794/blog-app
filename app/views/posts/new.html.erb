@@ -1,5 +1,16 @@
 <h1>New Post</h1>
+<%= form_for @post do |f| %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <%= f.label :thumbnail %>
+  <%= f.text_field :thumbnail %>
 
-<%= render 'form', post: @post %>
+  <%= f.label :category %>
+  <%= f.select(:category, Post.categories.map{|category| [category, category]})  %>
+
+  <%= f.label :description %>
+  <%= f.text_area :description %>
+
+  <%= f.submit "Create Post" %>
+<% end %>
 
 <%= link_to 'Back', posts_path %>

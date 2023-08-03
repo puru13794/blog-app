@@ -4,4 +4,7 @@
 <% else %>
   <%= button_to "Sign in", new_user_session_path %> 
 <% end %>
-<p>dashboard</p>
+<%= button_to "new Post", posts_path %>
+<% @posts.each do |post| %>
+<p><%= post&.description%></p>
+<% end %>
