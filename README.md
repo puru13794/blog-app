@@ -1,4 +1,9 @@
-Simple Blog application in Ruby on rails
+Simple Blog Application in Ruby on rails
 
-clone it, run bundle install, rails s
+Clone repo
 
+change secrets.sample.yml to secrets.yml
+
+jwt_token: '9m4NkHpdYErnpY' in secrets
+
+give bundle install
